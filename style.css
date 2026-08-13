@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- Estilos Gerais e de Fundo --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1207a6;
+background: linear-gradient(195deg,rgba(18, 7, 166, 1) 0%, rgba(20, 19, 2, 1) 100%);
+}
+
+.wrapper {
+    height: 400px;
+    width: 400px;
+    padding: 25px;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cards .card {
+    cursor: pointer;
+    width: calc(100% / 4 - 10px);
+    height: calc(100% / 4 - 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.cards .card .view {
+    width: 100%;
+    height: 100%;
+    background: #f1f1f1;
+    border: 3px solid #050380;
+    position: absolute;
+    border-radius: 7px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .back-view {
+    /* Por padrão, o verso do card fica virado */
+    transform: rotateY(180deg);
+}
+
+.card.flip {
+    /* Quando a classe flip é adicionada, vira o card */
+    transform: rotateY(180deg);
+}
+
+.card .back-view img {
+    max-width: 80%;
+    max-height: 80%;
+}
